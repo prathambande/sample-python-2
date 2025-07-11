@@ -29,6 +29,8 @@ ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = ['https://*']
 
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
+
 CORS_ORIGIN_WHITELIST = ['*']
 
 # Application definition
