@@ -34,16 +34,11 @@ jobs:
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
-
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
         with:
           name: python-app
-          path: |
-            release.zip
-            !venv/
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -57,10 +52,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: python-app
-
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
-
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -97,16 +88,11 @@ jobs:
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
-
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
         with:
           name: python-app1
-          path: |
-            release.zip
-            !venv/
+          path: .
 
   deploy1:
     runs-on: ubuntu-latest
@@ -120,9 +106,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: python-app1
-
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@releases/v2-fix-isLinux-set
