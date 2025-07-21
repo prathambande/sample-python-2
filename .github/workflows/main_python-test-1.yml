@@ -67,9 +67,10 @@ jobs:
           app-name: 'python-test-1'
           slot-name: 'Production'
 
-  build1:
+  buildAndDeploy:
     runs-on: ubuntu-latest
     permissions:
+      id-token: write #This is required for requesting the JWT
       contents: read #This is required for actions/checkout
 
     steps:
@@ -85,27 +86,6 @@ jobs:
           python -m venv antenv
           source antenv/bin/activate
           pip install -r requirements.txt
-        
-      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
-
-      - name: Upload artifact for deployment jobs
-        uses: actions/upload-artifact@v4
-        with:
-          name: python-app1
-          path: .
-
-  deploy1:
-    runs-on: ubuntu-latest
-    needs: build1
-    permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v4
-        with:
-          name: python-app1
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@releases/v2-fix-isLinux-set
