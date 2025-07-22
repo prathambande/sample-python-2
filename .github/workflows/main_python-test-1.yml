@@ -42,7 +42,7 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0DB788C298484C07A9EE9390D4BF6925 }}
 
       - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@releases/v2-fix-isLinux-set
+        uses: azure/webapps-deploy@releases/v3-fix-isLinux-set
         id: deploy-to-webapp
         with:
           app-name: 'python-test-1'
@@ -69,7 +69,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@releases/v2-fix-isLinux-set
+        uses: azure/webapps-deploy@releases/v3-fix-isLinux-set
         id: deploy-to-webapp
         with:
           app-name: 'python-test-2'
