@@ -66,7 +66,7 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3326C3F838FF4A75ADA80A0FE8429754 }}
 
       - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@releases/v3-fix-isLinux-set
+        uses: azure/webapps-deploy@releases/v3-fix-all-linux-apps
         id: deploy-to-webapp
         with:
           app-name: 'release-python'
