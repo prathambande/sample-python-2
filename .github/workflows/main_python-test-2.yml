@@ -70,7 +70,7 @@ jobs:
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_885B7FC3AC634FDBA50ADDBA3A965293 }}
 
       - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@releases/v2
+        uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
           app-name: 'python-test-2'
