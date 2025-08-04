@@ -40,7 +40,7 @@ jobs:
           name: python-app
           path: |
             .
-            # !antenv/
+            !antenv/             # Excluding it if Oryx Build (SCM Build) is turned on 
 
   deploy:
     runs-on: ubuntu-latest
@@ -70,4 +70,5 @@ jobs:
           slot-name: 'Production'
 
           
+
 
