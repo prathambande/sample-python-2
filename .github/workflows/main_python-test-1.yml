@@ -29,8 +29,6 @@ jobs:
           python -m venv antenv
           source antenv/bin/activate
           pip install -r requirements.txt
-          mkdir antenv/yeet
-          touch antenv/yeet/t1.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -71,6 +69,7 @@ jobs:
           slot-name: 'Production'
 
           
+
 
 
 
