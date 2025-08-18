@@ -45,7 +45,7 @@ jobs:
         run: |
           python -m venv antenv
           source antenv/bin/activate
-          case "${{ steps.check_file.outputs.install_type }}" in
+          case "${{ steps.detect_install_file.outputs.install_type }}" in
             setup)
               pip install .
               ;;
@@ -101,4 +101,5 @@ jobs:
           slot-name: 'Production'
 
           
+
 
