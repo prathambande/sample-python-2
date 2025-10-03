@@ -26,11 +26,9 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          python -m venv venv
-          source venv/bin/activate
-      
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+          python -m venv antenv
+          source antenv/bin/activate
+          pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -40,7 +38,6 @@ jobs:
           name: python-app
           path: |
             .
-            !venv/
 
   deploy:
     runs-on: ubuntu-latest
@@ -68,4 +65,5 @@ jobs:
         with:
           app-name: 'python-test-1'
           slot-name: 'Production'
+
           
