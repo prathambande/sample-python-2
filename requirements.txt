@@ -1,1 +1,10 @@
 django
+psycopg2-binary
+python-dotenv
+whitenoise
+django-redis
+fastapi
+uvicorn
+jinja2
+python-multipart
+gunicorn
