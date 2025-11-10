@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "django"
+name = "DJANGOAPP"
 version = "0.1.0"
 description = "A FastAPI application with LangChain integration"
 authors = ["Your Name <your.email@example.com>"]
